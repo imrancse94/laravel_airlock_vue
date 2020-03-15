@@ -107,5 +107,6 @@
     <orderEntry type="module" module-name="chtl-laravel-base" />
     <orderEntry type="module" module-name="Stellar-master" />
     <orderEntry type="module" module-name="vue" />
+    <orderEntry type="module" module-name="laravel-jwt-react" />
   </component>
 </module>

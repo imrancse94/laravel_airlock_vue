@@ -5,6 +5,7 @@
       <module fileurl="file://$USER_HOME$/Downloads/Stellar-master (1)/Stellar-master/.idea/Stellar-master.iml" filepath="$USER_HOME$/Downloads/Stellar-master (1)/Stellar-master/.idea/Stellar-master.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/airlock.iml" filepath="$PROJECT_DIR$/.idea/airlock.iml" />
       <module fileurl="file://$PROJECT_DIR$/../chtl-laravel-base/.idea/chtl-laravel-base.iml" filepath="$PROJECT_DIR$/../chtl-laravel-base/.idea/chtl-laravel-base.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../laravel-jwt-react/.idea/laravel-jwt-react.iml" filepath="$PROJECT_DIR$/../laravel-jwt-react/.idea/laravel-jwt-react.iml" />
       <module fileurl="file://$PROJECT_DIR$/../vue/.idea/vue.iml" filepath="$PROJECT_DIR$/../vue/.idea/vue.iml" />
     </modules>
   </component>

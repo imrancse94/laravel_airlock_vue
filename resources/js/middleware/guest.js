@@ -1,9 +1,9 @@
-export default function guest ({ next, store }){
-    if(store.getters['auth\check']){
-        return next({
-            name: '/'
-        })
+import store from './../store'
+import Cookies from "js-cookie";
+export default function guest({ next, router }) {
+    if (Cookies.get('token')) {
+        return router.push({ name: 'welcome' });
     }
 
-    return next()
+    return next();
 }

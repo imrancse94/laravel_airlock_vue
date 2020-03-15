@@ -83,7 +83,7 @@
                         <a class="dropdown-item"><i class="dropdown-item-icon icon-speech text-primary"></i> Messages</a>
                         <a class="dropdown-item"><i class="dropdown-item-icon icon-energy text-primary"></i> Activity</a>
                         <a class="dropdown-item"><i class="dropdown-item-icon icon-question text-primary"></i> FAQ</a>
-                        <a class="dropdown-item"><i class="dropdown-item-icon icon-power text-primary"></i>Sign Out</a>
+                        <a @click="logout()" class="dropdown-item"><i class="dropdown-item-icon icon-power text-primary"></i>Sign Out</a>
                     </div>
                 </li>
             </ul>
@@ -97,6 +97,14 @@
 <script>
 
 export default {
+    methods:{
+        logout(){
+            /*axios.post('api/logout').then(res =>{
+              console.log('logout',res);
 
+            })*/
+            this.$store.dispatch('auth/logout');
+        }
+    }
 }
 </script>

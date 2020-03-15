@@ -10,7 +10,7 @@
                             </div>
                             <h4>Hello! let's get started</h4>
                             <h6 class="font-weight-light">Sign in to continue.</h6>
-                            <form class="pt-3" @submit.prevent="login" @keydown="form.onKeydown($event)">
+                            <form autocomplete="off" class="pt-3" @submit.prevent="login" @keydown="form.onKeydown($event)">
                                 <div class="form-group">
                                     <input v-model="form.email" :class="{ 'is-invalid': form.errors.has('email') }" type="email" class="form-control form-control-lg" id="exampleInputEmail1"
                                            placeholder="Username">
@@ -22,10 +22,9 @@
                                     <has-error :form="form" field="password" />
                                 </div>
                                 <div class="mt-3">
-                                    <v-button :loading="form.busy">
-                                        Sign In
-                                    </v-button>
-                                    <!--<button class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn">Sign In</button>-->
+
+                                    <button class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn">Sign In</button>
+
                                 </div>
                                 <div class="my-2 d-flex justify-content-between align-items-center">
                                     <div class="form-check">
@@ -63,32 +62,36 @@
             remember: false
         }),
         mounted:function(){
-            this.initial()
+            //this.initial()
         },
 
         methods:{
-            initial:function(){
+            login:function(){
                 this.$api.get('/airlock/csrf-cookie').then(response => {
-                    console.log('response',response)
+                    this.process ();
                 })
             },
-            async login () {
-                alert('sdsdsd');
-                // Submit the form.
-                const { data } = await this.form.post('/api/login')
-                console.log(data);
-                return;
-                // Save the token.
-                /*this.$store.dispatch('auth/saveToken', {
-                    token: data.token,
-                    remember: this.remember
-                })
+            async process () {
+                try {
+                    // Submit the form.
+                    const { data } = await this.form.post('/api/login')
+                    console.log(data);
 
-                // Fetch the user.
-                await this.$store.dispatch('auth/fetchUser')
+                    // Save the token.
+                    this.$store.dispatch('auth/saveToken', {
+                        token: data.email,
+                        remember: this.remember
+                    })
 
-                // Redirect home.
-                this.$router.push({ name: 'home' })*/
+                    // Fetch the user.
+                    await this.$store.dispatch('auth/fetchUser')
+
+                    // Redirect welcome.
+                    this.$router.push({ name: 'welcome' })
+                } catch (e) {
+
+                }
+
             }
         },
     }

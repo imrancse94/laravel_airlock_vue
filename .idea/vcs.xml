@@ -3,5 +3,6 @@
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/../chtl-laravel-base" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../laravel-jwt-react" vcs="Git" />
   </component>
 </project>
